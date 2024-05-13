@@ -2,6 +2,23 @@
     font-family: "Cabin" ,"Libre Baskerville", serif;
 }
 
+@media only screen and (min-width : 990px){
+    /* Styles pour cette Media Queries */
+    .contactForm{
+        margin-inline: 25vh !important;
+    }
+    #videoYt{
+        width: 560px !important;
+        height: 315px !important;
+    }
+    #entreprisesTitle{
+        font-size: 4em;
+    }
+    #parcoursTitle{
+        font-size: 4em;
+    }
+    }
+
 h1, h2{
     
     font-family: "Libre Baskerville", serif;
@@ -193,12 +210,7 @@ h1, h2{
 }
 
 /*contact form*/
-@media only screen and (min-width : 990px){
-    /* Styles pour cette Media Queries */
-    .contactForm{
-        margin-inline: 25vh !important;
-    }
-    }
+
 
 
     /*slider*/
@@ -231,22 +243,6 @@ h1, h2{
 
       /* video YT*/
 
-      @media only screen and (min-width : 990px){
-        /* Styles pour cette Media Queries */
-        #videoYt{
-            width: 560px !important;
-            height: 315px !important;
-        }
-        }
-      @media only screen and (min-width : 990px){
-        /* Styles pour cette Media Queries */
-        #entreprisesTitle{
-            font-size: 4em;
-        }
-        }
-      @media only screen and (min-width : 990px){
-        /* Styles pour cette Media Queries */
-        #parcoursTitle{
-            font-size: 4em;
-        }
-        }
+ 
+
+    
