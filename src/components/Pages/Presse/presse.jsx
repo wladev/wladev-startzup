@@ -17,9 +17,18 @@ function Presse() {
                 <title>Presse</title>
             </Helmet>
             <div className="row" style={{'marginTop': '20vh'}}>
-              <div className="col">
-                <h2 className="text-uppercase">Ils parlent de nous</h2>
-              </div>
+            <div className="col bgPresse text-uppercase  text-center d-flex justify-content-center">
+                        <h1
+                            className="text-uppercase my-auto"
+                            style={{
+                                color: "white",
+                                fontWeight: "bold",
+                                fontSize: "3.5em",
+                            }}
+                        >
+                            Ils parlent de nous
+                        </h1>
+                    </div>
             </div>
             <div
                 className="row d-flex gap-3 justify-content-center mt-5"

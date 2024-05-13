@@ -6,17 +6,16 @@ import Form from "react-bootstrap/Form";
 export default function Contact() {
     return (
         <>
-            <div className="container">
-                    <div className="row mx-5" style={{ "margin-top": "20vh" }}>
-                        <h2 className="text-uppercase mb-3">Pour candidater à une prochaine session ou solliciter nos services d'accompagnement d'entreprises</h2>
+            <div className="container-fluid">
+                    <div className="row mx-5" style={{ "margin-top": "20vh",  }}>
+                        <h2 className="text-uppercase mb-5">Pour candidater à une prochaine session ou solliciter nos services d'accompagnement d'entreprises</h2>
                         <p className="mb-3 fs-5">Renseignez vos informations, nous vous contacterons dans les plus brefs délais</p>
                         <p className="mb-5 fs-5">Vous pouvez également nous écrire directement à <a href ='mailto:contact@start-zup.com'>contact@start-zup.com</a></p>
                     </div>
                 <div
-                    className="row d-flex justify-content-center bg-dark rounded rounded-5 mx-lg-5 mx-md-3 mx-sm-2"
-                    
+                    className="contactForm row d-flex justify-content-center bg-dark rounded rounded-5 mx-2 mx-md-5 "
                 >
-                    <div className="col-lg-6 ">
+                    <div className="col-lg-8 col-md-8 ">
                         <h2 className="text-uppercase mt-5" style={{ color: "white" }}>Formulaire de contact</h2>
                         <Form>
                             <p className="mt-5" style={{ color: "white" }}>Vos Informations de contact</p>

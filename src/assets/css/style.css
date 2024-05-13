@@ -27,6 +27,40 @@ h1, h2{
     color: #ffffff;
     font-size: 5vw;
 }
+
+/*navbar*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+.dropDownContent {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+.dropDownContent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+.dropDownContent a:hover {color: #36E2AD;}
+
+  /* Show the dropdown menu on hover */
+.dropDown:hover .dropDownContent {display: block;}
+
+
+
 .nav_link:hover{
     color: #36E2AD !important;
 }
@@ -135,7 +169,61 @@ h1, h2{
     padding: 0;
 }
 
-.carousel-img{
-    height: 200px;
-    width: auto;
+
+/*page entreprises*/
+.bgEntreprises{
+    background-image: url("../img/entreprises.png");
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
 }
+
+/*Page presse*/
+
+.bgPresse{
+    background-image: url("../img/bgPresse.jpeg");
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+/*contact form*/
+@media only screen and (min-width : 990px){
+    /* Styles pour cette Media Queries */
+    .contactForm{
+        margin-inline: 25vh !important;
+    }
+    }
+
+
+    /*slider*/
+    .slider {
+        margin:0 20px;
+        overflow:"hidden";
+        padding:2rem 0;
+      }
+      
+
+    .carousel-img, .slider img{
+          height: 200px;
+      width: auto;
+      /* border-radius: 10px; */
+      /* margin: 10px; */
+
+      }
+      
+      /* .react-multi-carousel-list {
+      padding: 0rem 0 2rem 0;
+      }
+      
+      .custom-dot-list-style button{
+      border: none;
+      background: rgb(255, 68, 68);
+      } 
+      .react-multi-carousel-dot.react-multi-carousel-dot--active button{
+      background: rgb(255, 68, 68) !important;
+      }  */

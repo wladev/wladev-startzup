@@ -6,7 +6,7 @@ import React from "react";
 export default function Integration(){
     return (
         <>
-        <div className="container-fluid">
+        <div className="container-fluid" id="integration">
             <div className="row mt-5">
                 <div className="col">
                     <h2 className="text-uppercase">

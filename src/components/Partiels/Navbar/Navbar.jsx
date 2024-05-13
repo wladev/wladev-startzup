@@ -5,6 +5,9 @@ import Navbar from 'react-bootstrap/Navbar';
 // import s from './navbar.module.css'
 import logo from '../../../assets/img/logo.png'
 import { NavLink } from 'react-router-dom';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
+
+import "./Navbar.module.css";
 
 
 
@@ -21,7 +24,17 @@ function NavbarTop() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav ">
           <Nav className=" ms-auto text-uppercase " style={{"fontSize": "0.9em"}}>
-            <NavLink to="/Formations"className={'nav_link '}>Nos Formations</NavLink>
+            <div className="dropDown">
+            <NavLink to="/Formations"className={'nav_link dropDownForm'}>Nos Formations</NavLink>
+            <div className="dropDownContent">
+              <a href="/Formations#parcours">Le parcours proposé</a>
+              <a href="/Formations#pourquoiSZ">Pourquoi choisir Start-Zup&nbsp;?</a>
+              <a href="/Formations#apresForm">L'après formation</a>
+              <a href="/Formations#integration">Comment intégrer une session</a>
+              <a href="/Formations#financement">Financement</a>
+            </div>
+            </div>
+
             <NavLink to="/Agenda" className={'nav_link ms-lg-4 '}>Agenda</NavLink>
             <NavLink to="/a_propos" className={'nav_link ms-lg-4 '}>&#192; propos</NavLink>
             <NavLink to="/Presse" className={'nav_link ms-lg-4 '}>Presse</NavLink>

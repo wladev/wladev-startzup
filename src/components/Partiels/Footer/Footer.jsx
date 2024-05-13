@@ -74,7 +74,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a href='#!' className='text-dark'>
-                    Condutions générales
+                    Conditions générales
                   </a>
                 </li>
               </ul>
