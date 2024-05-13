@@ -17,11 +17,11 @@ export default function PourquoiSZ() {
                     </div>
                 </div>
                 <div className="row mt-5 d-flex justify-content-center gap-5 px-3 px-lg-0">
-                    <div className="col-lg-2 card">
+                    <div className="col-lg-2">
                         <img src={imgPartage} alt="" width={70} className="mx-auto"/>
                         <p
-                            className="text-uppercase fs-3 border border-2 rounded mt-2"
-                            style={{ color: "#36E2AD", 'fontWeight': 'bold' }}
+                            className="text-uppercase fs-5 mt-2"
+                            style={{'fontFamily': 'Libre Baskerville'}}
                         >
                             Le partage
                         </p>
@@ -31,11 +31,11 @@ export default function PourquoiSZ() {
                             sorte que tous nos étudiants s'entraident.
                         </p>
                     </div>
-                    <div className="col-lg-2 card">
+                    <div className="col-lg-2">
                         <img src={imgEchange} alt="" width={70} className="mx-auto"/>
                         <p
-                            className="text-uppercase fs-3 border border-2 rounded mt-2"
-                            style={{ color: "#36E2AD", 'fontWeight': 'bold' }}
+                            className="text-uppercase fs-5 mt-2"
+                            style={{'fontFamily': 'Libre Baskerville'}}
                         >
                             L'ÉCHANGE
                         </p>
@@ -45,11 +45,11 @@ export default function PourquoiSZ() {
                             projet
                         </p>
                     </div>
-                    <div className="col-lg-2 card">
+                    <div className="col-lg-2">
                         <img src={imgExcellence} alt="" width={70} className="mx-auto"/>
                         <p
-                            className="text-uppercase fs-3 border border-2 rounded mt-2"
-                            style={{ color: "#36E2AD", 'fontWeight': 'bold' }}
+                            className="text-uppercase fs-5 mt-2"
+                            style={{'fontFamily': 'Libre Baskerville'}}
                         >
                             l'excellence
                         </p>
@@ -59,11 +59,11 @@ export default function PourquoiSZ() {
                             pédagogique a été soigneusement sélectionnée.
                         </p>
                     </div>
-                    <div className="col-lg-2 card">
+                    <div className="col-lg-2">
                         <img src={imgFree} alt="" width={70} className="mx-auto"/>
                         <p
-                            className="text-uppercase fs-3 border border-2 rounded mt-2"
-                            style={{ color: "#36E2AD", 'fontWeight': 'bold', 'borderColor': 'black' }}
+                            className="text-uppercase fs-5 mt-2"
+                            style={{'fontFamily': 'Libre Baskerville'}}
                         >
                             La gratuité
                         </p>

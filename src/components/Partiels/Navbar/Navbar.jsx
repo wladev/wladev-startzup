@@ -30,11 +30,11 @@ function NavbarTop() {
             <div className="dropDown">
               <NavLink to="/Formations" className={'nav_link dropDownForm'} onClick={() => {}}>Nos Formations</NavLink>
               <div className="dropDownContent" id='dropDownContent'>
-                <a href="/Formations#parcours" onClick={() => {}}>Le parcours proposé</a>
-                <a href="/Formations#pourquoiSZ" onClick={() => {}}>Pourquoi choisir Start-Zup&nbsp;?</a>
-                <a href="/Formations#apresForm" onClick={() => {}}>L'après formation</a>
-                <a href="/Formations#integration" onClick={() => {}}>Comment intégrer une session</a>
-                <a href="/Formations#financement" onClick={() => {}}>Financement</a>
+                <a href="/Formations#parcours" onClick={() => handleLinkClick()}>Le parcours proposé</a>
+                <a href="/Formations#pourquoiSZ" onClick={() => handleLinkClick()}>Pourquoi choisir Start-Zup&nbsp;?</a>
+                <a href="/Formations#apresForm" onClick={() => handleLinkClick()}>L'après formation</a>
+                <a href="/Formations#integration" onClick={() => handleLinkClick()}>Comment intégrer une session</a>
+                <a href="/Formations#financement" onClick={() => handleLinkClick()}>Financement</a>
               </div>
             </div>
             <NavLink to="/Agenda" className={'nav_link ms-lg-4 '} onClick={() => handleLinkClick()}>Agenda</NavLink>
