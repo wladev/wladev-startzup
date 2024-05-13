@@ -75,6 +75,7 @@ h1, h2{
 
   /* Show the dropdown menu on hover */
 .dropDown:hover .dropDownContent {display: block;}
+.dropDown a:visited .dropDownContent{display: none;}
 
 
 
