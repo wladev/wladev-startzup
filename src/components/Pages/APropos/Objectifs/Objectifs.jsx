@@ -16,7 +16,7 @@ export default function Objectifs(){
                     </h2>
                 </div>
             </div>
-            <div className="row mt-5 d-flex justify-content-end ">
+            <div className="row mt-5 d-flex justify-content-lg-end ">
                 <div className="col-lg-3 mb-3 me-5">
                     <img src={imgSchool1} alt="" width={300}/>
                 </div>

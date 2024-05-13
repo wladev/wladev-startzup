@@ -42,8 +42,9 @@ export default function Parcours() {
                             style={{
                                 color: "white",
                                 fontWeight: "bold",
-                                fontSize: "3.5em",
+                                fontSize: "3em",
                             }}
+                            id="parcoursTitle"
                         >
                             Notre parcours
                             <br /> de formation

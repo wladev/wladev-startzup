@@ -16,6 +16,7 @@ function Presse() {
             <Helmet>
                 <title>Presse</title>
             </Helmet>
+            <div className="container-fluid">
             <div className="row" style={{'marginTop': '20vh'}}>
             <div className="col bgPresse text-uppercase  text-center d-flex justify-content-center">
                         <h1
@@ -177,6 +178,7 @@ function Presse() {
                         </Button>
                     </Card.Body>
                 </Card>
+            </div>
             </div>
         </>
     );

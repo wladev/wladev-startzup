@@ -17,10 +17,11 @@ export default function Entreprises() {
         <div className="container-fluid" style={{'marginTop':'20vh'}}>
         <div className="row">
                     <div className="col bgEntreprises text-uppercase  text-center d-flex justify-content-center">
-                        <h1 className="text-uppercase my-auto" style={{'color' : 'white',
+                        <h1 className="text-uppercase my-auto mx-auto" style={{'color' : 'white',
                                                                     'fontWeight':'bold',
-                                                                    'fontSize':'3.5em',
-                                                                    }}>
+                                                                    
+                                                                    }}
+                            id="entreprisesTitle">
                             Entreprises
                         </h1>
                     </div>
@@ -37,23 +38,23 @@ En décidant de collaborer avec nous, vous soutenez l’emploi local en activant
                 </div>
             </div>
             <div className="row d-flex justify-content-center my-5 fs-5">
-                <div className="col-lg-2">
+                <div className="col-lg-2 mb-5">
                     <img src={imgEtape1} alt="" width={100} className="mb-3" />
                     <p>Vous nous contactez</p>
                 </div>
-                <div className="col-lg-2">
+                <div className="col-lg-2 mb-5">
                     <img src={imgEtape2} alt="" width={100} className="mb-3" />
                     <p>Nous analysons vos besoins</p>
                 </div>
-                <div className="col-lg-2">
+                <div className="col-lg-2 mb-5">
                     <img src={imgEtape3} alt="" width={100} className="mb-3" />
                     <p>Nos talents se mobilisent</p>
                 </div>
-                <div className="col-lg-2">
+                <div className="col-lg-2 mb-5">
                     <img src={imgEtape4} alt="" width={100} className="mb-3" />
                     <p>Vous validez nos propositions</p>
                 </div>
-                <div className="col-lg-2">
+                <div className="col-lg-2 mb-5">
                     <img src={imgEtape5} alt="" width={100} className="mb-3" />
                     <p>Nous finalisons le projet</p>
                 </div>
@@ -65,7 +66,7 @@ sur les aspects techniques, organisationnels, stratégiques et financiers.</p>
                 </div>
             </div>
             <div className="row fs-5 mt-5">
-                <div className="col-lg-4">
+                <div className="col-lg-4 mb-5">
                     <p className="text-uppercase fs-3" style={{'color': '#36E2AD'}}>Conseil en stratègie</p>
                     <ul>
                         <li style={{'list-style': 'none'}}>&#10004; Stratègie des systèmes d'information</li>
@@ -73,7 +74,7 @@ sur les aspects techniques, organisationnels, stratégiques et financiers.</p>
                         <li style={{'list-style': 'none'}}>&#10004; Optimisation opérationnelle</li>
                     </ul>
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-4 mb-5">
                     <p className="text-uppercase fs-3" style={{'color': '#36E2AD'}}>Méthodologie et process</p>
                     <ul>
                         <li style={{'list-style': 'none'}}>&#10004; Audit et analsyse</li>
@@ -81,7 +82,7 @@ sur les aspects techniques, organisationnels, stratégiques et financiers.</p>
                         <li style={{'list-style': 'none'}}>&#10004; Formationet conduite du chargement</li>
                     </ul>
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-4 mb-5">
                     <p className="text-uppercase fs-3" style={{'color': '#36E2AD'}}>Expertise et technologie</p>
                     <ul>
                         <li style={{'list-style': 'none'}}>&#10004; Architecture et infrastructure</li>
@@ -90,7 +91,7 @@ sur les aspects techniques, organisationnels, stratégiques et financiers.</p>
                     </ul>
                 </div>
             </div>
-            <div className="row mt-5 fs-4">
+            <div className="row mt-5 fs-4 mb-5">
                 <div className="col mt-5">
                     <p>Nous vous accompagnons sur le recrutement de vos futurs talents qui répondront à vos besoins en
 compétences numériques, soft skills et codes de l’entreprisedès leur premier jour chez vous.</p>
