@@ -10,11 +10,16 @@ export default function ApresForm() {
                 </div>
             </div>
             <div className="row">
-                <div className="col">
+                <div className="col fs-5">
                     <p>
-                    Avec notre aide, vous aurez des opportunités de carrière dans un secteur en plein essor et en forte demande.
+                    Start-Zup vous offre des opportunités de carrière dans un secteur en plein essor et en forte demande.
                     </p>
-                    Notre principal objectif est de vous assurer une sortie positive et de vous accompagner
+                    <p>
+                    Notre principal objectif est de vous assurer une sortie positive au parcours de formation et de vous accompagner jusqu'au processus de recrutement.
+                    </p>
+                    <p>
+                        (Développement des soft kills, rédaction du CV,...)
+                    </p>
                 </div>
             </div>
         </div>

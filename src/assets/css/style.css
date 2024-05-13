@@ -5,7 +5,7 @@
 @media only screen and (min-width : 990px){
     /* Styles pour cette Media Queries */
     .contactForm{
-        margin-inline: 25vh !important;
+        margin-inline: 40vh !important;
     }
     #videoYt{
         width: 560px !important;

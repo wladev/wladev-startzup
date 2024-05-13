@@ -8,7 +8,7 @@ export default function Contact() {
         <>
             <div className="container-fluid">
                     <div className="row mx-5" style={{ "margin-top": "20vh",  }}>
-                        <h2 className="text-uppercase mb-5">Pour candidater à une prochaine session ou solliciter nos services d'accompagnement d'entreprises</h2>
+                        <h2 className="text-uppercase mb-5 fs-3 text-center">Pour candidater à une prochaine session ou solliciter nos services d'accompagnement d'entreprises</h2>
                         <p className="mb-3 fs-5">Renseignez vos informations, nous vous contacterons dans les plus brefs délais</p>
                         <p className="mb-5 fs-5">Vous pouvez également nous écrire directement à <a href ='mailto:contact@start-zup.com'>contact@start-zup.com</a></p>
                     </div>
