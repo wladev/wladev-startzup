@@ -23,7 +23,7 @@ export default function Entreprises() {
                             style={{
                                 'color': "white",
                                 'fontWeight': "bold",
-                                'fontSize': "4.5em",
+                                'fontSize': "2.5em",
                             }}
                         >
                             Entreprises
