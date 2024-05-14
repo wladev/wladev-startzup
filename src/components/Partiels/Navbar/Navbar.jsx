@@ -37,7 +37,7 @@ function NavbarTop() {
                 <a href="/Formations#financement" onClick={() => handleLinkClick()}>Financement</a>
               </div>
             </div>
-            <NavLink to="/Agenda" className={'nav_link ms-lg-4 '} onClick={() => handleLinkClick()}>Agenda</NavLink>
+            {/* <NavLink to="/Agenda" className={'nav_link ms-lg-4 '} onClick={() => handleLinkClick()}>Agenda</NavLink> */}
             <NavLink to="/a_propos" className={'nav_link ms-lg-4 '} onClick={() => handleLinkClick()}>&#192; propos</NavLink>
             <NavLink to="/Presse" className={'nav_link ms-lg-4 '} onClick={() => handleLinkClick()}>Presse</NavLink>
             <NavLink to="/Entreprises" className={'nav_link ms-lg-4 '} onClick={() => handleLinkClick()}>Entreprises</NavLink>

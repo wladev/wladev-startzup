@@ -17,6 +17,9 @@
     #parcoursTitle{
         font-size: 4em !important;
     }
+    #press_card{
+        height: 20vh;
+    }
     }
 
 h1, h2{
@@ -209,6 +212,8 @@ h1, h2{
     background-repeat: no-repeat;
     opacity: 0.7;
 }
+
+
 
 /*contact form*/
 
