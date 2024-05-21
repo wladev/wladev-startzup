@@ -10,7 +10,7 @@ export function Home() {
     return (
         <>
             <Background />
-            <div className="container-fluid">
+            <div className="container-fluid mb-5">
                 <div className="row mt-5 mb-5">
                     <div className="col-9 mx-auto">
                         <p className="text-center fs-4">
@@ -28,9 +28,9 @@ export function Home() {
                         </p>
                     </div>
                 </div>
-            </div>
             <Video/>
             <Partenaires />
+            </div>
         </>
     );
 }

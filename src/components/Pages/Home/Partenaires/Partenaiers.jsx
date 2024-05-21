@@ -16,6 +16,7 @@ import imgAws from '../../../../assets/img/aws.png';
 import imgMicrosoft from '../../../../assets/img/microsoft.png';
 import imgAmbition from '../../../../assets/img/ambition.png';
 import imgArd from '../../../../assets/img/ard.png';
+import imgIDF from '../../../../assets/img/regionIDF.png';
 
 function Partenaires() {
   const [index, setIndex] = useState(0);
@@ -83,6 +84,9 @@ function Partenaires() {
       </Carousel.Item>
       <Carousel.Item>
         <img src={imgArd} height="100vh" alt="logo ARD com" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src={imgIDF} height="100vh" alt="logo ARD com" />
       </Carousel.Item>
     </Carousel>
     </>

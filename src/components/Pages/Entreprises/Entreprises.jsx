@@ -177,7 +177,7 @@ export default function Entreprises() {
                     </div>
                 </div>
                 <div className="row mt-5">
-                    <div className="col mt-5">
+                    <div className="col mt-5 mb-5">
                         <Button href="/contact" variant="dark">
                             Contactez-nous
                         </Button>

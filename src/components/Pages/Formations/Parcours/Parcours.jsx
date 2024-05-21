@@ -197,11 +197,11 @@ export default function Parcours() {
                                     <div class="card-body">
                                         <p class="card-text my-3">
                                             <small class="text-body-secondary">
-                                                Durée: 3 Mois
+                                                Durée: de 3 à 6 Mois
                                             </small>
                                         </p>
                                         <p class="card-text">
-                                            Un stage de 3 mois pour mettre en
+                                            Un stage de 3 à 6 mois pour mettre en
                                             pratique vos connaissances acquises
                                             dans une de nos entreprises
                                             partenaires.

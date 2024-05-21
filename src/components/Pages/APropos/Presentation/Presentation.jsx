@@ -19,7 +19,7 @@ export function Presentation() {
                 </div>
                 <div className="row">
                     <div className="col-8 mx-auto">
-                        <p className="mt-5">
+                        <p className="mt-5 fs-5">
                             Le digital se retrouve à tous les niveaux de la
                             société, des organisations, des métiers et dans
                             toutes les filières. C’est pourquoi nous avons créé
@@ -36,7 +36,7 @@ export function Presentation() {
                     />
                 </div>
                 <div className="row">
-                    <div className="col-9 mx-auto text_center mt-5">
+                    <div className="col-9 mx-auto text_center mt-5 fs-5">
                         <p>
                             Offrir le meilleur de l’apprentissage, une formation
                             mettant l’accent sur des projets pratiques et le

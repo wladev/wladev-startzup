@@ -13,7 +13,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Footer() {
   return (
-    <MDBFooter className='text-center mt-5' color='black' bgColor='light'>
+    <MDBFooter className='text-center pt-5' color='black' bgColor='light'>
       <MDBContainer className='p-4'>
         <section className='mb-4'>
           <MDBBtn outline color="dark" floating className='m-1' href='https://twitter.com/Startzup78' role='button' target='_blank'>

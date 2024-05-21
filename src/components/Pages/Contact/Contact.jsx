@@ -1,27 +1,103 @@
-import React from "react";
-import { FormGroup } from "react-bootstrap";
+import React, { useState } from "react";
+import { FormGroup, Alert } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Helmet } from "react-helmet";
 
 export default function Contact() {
+    const [formData, setFormData] = useState({
+        isAn: 0,
+        lstName: "",
+        fstName: "",
+        email: "",
+        situation: 0,
+        needs: "",
+        knowSz: 0,
+    });
+
+    const [success, setSuccess] = useState(false);
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [id]: id === "isAn" || id === "situation" || id === "knowSz" ? parseInt(value, 10) : value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch("http://localhost:8000/api/web_contacts", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/ld+json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error("Error details:", errorData);
+                throw new Error(`Error: ${response.statusText}`);
+            }
+
+            // Afficher l'alerte de succès et rafraîchir la page après 3 secondes
+            setSuccess(true);
+            setTimeout(() => {
+                window.location.reload();
+            }, 3000);
+
+        } catch (error) {
+            console.error("There was an error!", error);
+        }
+    };
+
     return (
         <>
+            <Helmet>
+                <title>Contact</title>
+            </Helmet>
             <div className="container-fluid">
-                    <div className="row mx-5" style={{ "margin-top": "20vh",  }}>
-                        <h2 className="text-uppercase mb-5 fs-3 text-center">Pour candidater à une prochaine session ou solliciter nos services d'accompagnement d'entreprises</h2>
-                        <p className="mb-3 fs-5">Renseignez vos informations, nous vous contacterons dans les plus brefs délais</p>
-                        <p className="mb-5 fs-5">Vous pouvez également nous écrire directement à <a href ='mailto:contact@start-zup.com'>contact@start-zup.com</a></p>
-                    </div>
-                <div
-                    className="contactForm row d-flex justify-content-center bg-dark rounded rounded-5 mx-2 mx-md-5 "
-                >
-                    <div className="col-lg-8 col-md-8 ">
-                        <h2 className="text-uppercase mt-5" style={{ color: "white" }}>Formulaire de contact</h2>
-                        <Form>
-                            <p className="mt-5" style={{ color: "white" }}>Vos Informations de contact</p>
+
+                <div className="row mx-5" style={{ marginTop: "20vh" }}>
+                    <h2 className="text-uppercase mb-5 fs-3 text-center">
+                        Pour candidater à une prochaine session ou solliciter
+                        nos services d'accompagnement d'entreprises
+                    </h2>
+                    <p className="mb-3 fs-5">
+                        Renseignez vos informations, nous vous contacterons dans
+                        les plus brefs délais
+                    </p>
+                    <p className="mb-5 fs-5">
+                        Vous pouvez également nous écrire directement à{" "}
+                        <a href="mailto:contact@start-zup.com">
+                            contact@start-zup.com
+                        </a>
+                    </p>
+                </div>
+
+                <div className="contactForm row d-flex justify-content-center bg-dark rounded rounded-5 mx-2 mx-md-5">
+                    <div className="col-lg-8 col-md-8">
+                        <h2 className="text-uppercase mt-5" style={{ color: "white" }}>
+                            Formulaire de contact
+                        </h2>
+                        {success && (
+                            <Alert variant="success" onClose={() => setSuccess(false)} dismissible>
+                                Votre message a été envoyé avec succès !
+                            </Alert>
+                        )}
+                        <Form onSubmit={handleSubmit}>
+                            <p className="mt-5" style={{ color: "white" }}>
+                                Vos Informations de contact
+                            </p>
                             <Form.Select
                                 aria-label="Default select example"
                                 className="mb-3"
+                                id="isAn"
+                                value={formData.isAn}
+                                onChange={handleChange}
                             >
                                 <option>Vous êtes ?</option>
                                 <option value="1">Un particulier</option>
@@ -30,29 +106,36 @@ export default function Contact() {
                             <FormGroup className="mb-3">
                                 <Form.Control
                                     type="text"
-                                    id="inputFstName"
+                                    id="lstName"
                                     placeholder="Nom"
+                                    value={formData.lstName}
+                                    onChange={handleChange}
                                 />
                             </FormGroup>
                             <FormGroup className="mb-3">
                                 <Form.Control
                                     type="text"
-                                    id="inputLstName"
+                                    id="fstName"
                                     placeholder="Prénom"
+                                    value={formData.fstName}
+                                    onChange={handleChange}
                                 />
                             </FormGroup>
-                            <Form.Group
-                                className="mb-3"
-                                controlId="formBasicEmail"
-                            >
+                            <FormGroup className="mb-3">
                                 <Form.Control
                                     type="email"
                                     placeholder="Entrez votre email"
+                                    id="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
                                 />
-                            </Form.Group>
+                            </FormGroup>
                             <Form.Select
                                 aria-label="Default select example"
                                 className="mb-3 mt-5"
+                                id="situation"
+                                value={formData.situation}
+                                onChange={handleChange}
                             >
                                 <option>Situation professionnelle</option>
                                 <option value="1">Etudiant</option>
@@ -60,19 +143,24 @@ export default function Contact() {
                                 <option value="3">Demandeur d'emploi</option>
                                 <option value="4">Entreprise</option>
                             </Form.Select>
-                            <Form.Group
-                                className="mb-3"
-                                controlId="exampleForm.ControlTextarea1"
-                            >
+                            <FormGroup className="mb-3">
                                 <Form.Label style={{ color: "white" }}>
                                     Décrivez vos besoins en quelques lignes
                                 </Form.Label>
-                                <Form.Control as="textarea" rows={3} />
-                            </Form.Group>
-
+                                <Form.Control
+                                    id="needs"
+                                    as="textarea"
+                                    rows={3}
+                                    value={formData.needs}
+                                    onChange={handleChange}
+                                />
+                            </FormGroup>
                             <Form.Select
                                 aria-label="Default select example"
                                 className="mb-3 mt-5"
+                                id="knowSz"
+                                value={formData.knowSz}
+                                onChange={handleChange}
                             >
                                 <option>
                                     Comment avez vous connu{" "}
@@ -81,31 +169,26 @@ export default function Contact() {
                                     </span>
                                 </option>
                                 <option value="1">Internet</option>
-                                <option value="2">Bouche à oreille</option>
+                                <option value="2">Réseau personnel</option>
                                 <option value="3">
                                     Pôle emploi / Mission locale
                                 </option>
+                                <option value="4">Autre</option>
                             </Form.Select>
-                            <Form.Group controlId="formFile" className="mb-3">
-        <Form.Label style={{ color: "white" }}>Faites nous parvenir votre CV</Form.Label>
-        <Form.Control type="file" />
-      </Form.Group>
-
-                            <Form.Group
-                                className="mb-3"
-                                controlId="formBasicCheckbox"
-                            >
+                            <FormGroup className="mb-3">
+                                <Form.Label style={{ color: "white" }}>
+                                    Faites nous parvenir votre CV
+                                </Form.Label>
+                                <Form.Control type="file" />
+                            </FormGroup>
+                            <FormGroup className="mb-3">
                                 <Form.Check
                                     type="checkbox"
                                     label="J'ai pris connaissance des informations liées à la conservation de mes données personnelles"
                                     style={{ color: "white" }}
                                 />
-                            </Form.Group>
-                            <Button
-                                variant="light"
-                                type="submit"
-                                className="mb-5"
-                            >
+                            </FormGroup>
+                            <Button variant="light" type="submit" className="mb-5">
                                 Envoyer
                             </Button>
                         </Form>
