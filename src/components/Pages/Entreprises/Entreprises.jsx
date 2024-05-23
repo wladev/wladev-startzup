@@ -30,13 +30,8 @@ export default function Entreprises() {
                         </h1>
                     </div>
                 </div>
-                {/* <div className="row">
-                <div className="col">
-                    <h2 className="text-uppercase">Entreprises</h2>
-                </div>
-            </div> */}
                 <div className="row mt-5">
-                    <div className="col mx-lg-5">
+                    <div className="col mx-lg-5 mb-5">
                         <p className="fs-4">
                             <span
                                 className="text-uppercase fs-2"
@@ -55,7 +50,7 @@ export default function Entreprises() {
                     <div className="col-lg-2 mb-5">
                         <img
                             src={imgEtape1}
-                            alt=""
+                            alt="vous nous contactez"
                             width={100}
                             className="mb-3"
                         />
@@ -64,7 +59,7 @@ export default function Entreprises() {
                     <div className="col-lg-2 mb-5">
                         <img
                             src={imgEtape2}
-                            alt=""
+                            alt="nous analysons"
                             width={100}
                             className="mb-3"
                         />
@@ -73,7 +68,7 @@ export default function Entreprises() {
                     <div className="col-lg-2 mb-5">
                         <img
                             src={imgEtape3}
-                            alt=""
+                            alt="nous mobilisons"
                             width={100}
                             className="mb-3"
                         />
@@ -82,7 +77,7 @@ export default function Entreprises() {
                     <div className="col-lg-2 mb-5">
                         <img
                             src={imgEtape4}
-                            alt=""
+                            alt="nous proposons"
                             width={100}
                             className="mb-3"
                         />
@@ -91,7 +86,7 @@ export default function Entreprises() {
                     <div className="col-lg-2 mb-5">
                         <img
                             src={imgEtape5}
-                            alt=""
+                            alt="nous finalisons"
                             width={100}
                             className="mb-3"
                         />
@@ -99,7 +94,7 @@ export default function Entreprises() {
                     </div>
                 </div>
                 <div className="row mt-5">
-                    <div className="col my-5">
+                    <div className="col mb-5">
                         <p className="fs-4">
                             Nous vous offrons un accompagnement sur mesure sur
                             les aspects techniques, organisationnels,
@@ -116,13 +111,13 @@ export default function Entreprises() {
                             Conseil en stratègie
                         </p>
                         <ul>
-                            <li style={{ "list-style": "none" }}>
+                            <li style={{ "listStyle": "none" }}>
                                 &#10004; Stratègie des systèmes d'information
                             </li>
-                            <li style={{ "list-style": "none" }}>
+                            <li style={{ "listStyle": "none" }}>
                                 &#10004; Management
                             </li>
-                            <li style={{ "list-style": "none" }}>
+                            <li style={{ "listStyle": "none" }}>
                                 &#10004; Optimisation opérationnelle
                             </li>
                         </ul>
@@ -135,13 +130,13 @@ export default function Entreprises() {
                             Méthodologie et process
                         </p>
                         <ul>
-                            <li style={{ "list-style": "none" }}>
+                            <li style={{ "listStyle": "none" }}>
                                 &#10004; Audit et analsyse
                             </li>
-                            <li style={{ "list-style": "none" }}>
+                            <li style={{ "listStyle": "none" }}>
                                 &#10004; Gestion de projets
                             </li>
-                            <li style={{ "list-style": "none" }}>
+                            <li style={{ "listStyle": "none" }}>
                                 &#10004; Formationet conduite du chargement
                             </li>
                         </ul>
@@ -154,19 +149,19 @@ export default function Entreprises() {
                             Expertise et technologie
                         </p>
                         <ul>
-                            <li style={{ "list-style": "none" }}>
+                            <li style={{ "listStyle": "none" }}>
                                 &#10004; Architecture et infrastructure
                             </li>
-                            <li style={{ "list-style": "none" }}>
+                            <li style={{ "listStyle": "none" }}>
                                 &#10004; Ingénieurie applicative
                             </li>
-                            <li style={{ "list-style": "none" }}>
+                            <li style={{ "listStyle": "none" }}>
                                 &#10004; Paramètrage et développement
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div className="row mt-5 fs-4 mb-5">
+                <div className="row fs-4 mb-5">
                     <div className="col mt-5">
                         <p>
                             Nous vous accompagnons sur le recrutement de vos
@@ -176,7 +171,7 @@ export default function Entreprises() {
                         </p>
                     </div>
                 </div>
-                <div className="row mt-5">
+                <div className="row">
                     <div className="col mt-5 mb-5">
                         <Button href="/contact" variant="dark">
                             Contactez-nous

@@ -13,28 +13,37 @@ export default function Contact() {
         situation: 0,
         needs: "",
         knowSz: 0,
+        cvFile: null,  // Ajout de cvFile pour stocker le fichier
     });
 
     const [success, setSuccess] = useState(false);
 
     const handleChange = (e) => {
-        const { id, value } = e.target;
+        const { id, value, files } = e.target;
+        if (files && files[0]) {
+            const file = files[0];
+            if (file.type !== 'application/pdf') {
+                alert("Seuls les fichiers PDF sont autorisés.");
+                return;
+            }
+        }
         setFormData((prevFormData) => ({
             ...prevFormData,
-            [id]: id === "isAn" || id === "situation" || id === "knowSz" ? parseInt(value, 10) : value,
+            [id]: files ? files[0] : id === "isAn" || id === "situation" || id === "knowSz" ? parseInt(value, 10) : value,
         }));
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const form = new FormData();
+        Object.keys(formData).forEach(key => {
+            form.append(key, formData[key]);
+        });
+
         try {
             const response = await fetch("http://localhost:8000/api/web_contacts", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/ld+json",
-                },
-                body: JSON.stringify(formData),
+                body: form,
             });
 
             if (!response.ok) {
@@ -43,11 +52,11 @@ export default function Contact() {
                 throw new Error(`Error: ${response.statusText}`);
             }
 
-            // Afficher l'alerte de succès et rafraîchir la page après 3 secondes
+            // Afficher l'alerte de succès et rafraîchir la page après 5 secondes
             setSuccess(true);
             setTimeout(() => {
                 window.location.reload();
-            }, 3000);
+            }, 5000);
 
         } catch (error) {
             console.error("There was an error!", error);
@@ -59,7 +68,14 @@ export default function Contact() {
             <Helmet>
                 <title>Contact</title>
             </Helmet>
-            <div className="container-fluid">
+            <div className="container-fluid mb-5">
+                <div className="row">
+                    {success && (
+                        <Alert variant="success" onClose={() => setSuccess(false)} dismissible>
+                            Votre message a été envoyé avec succès !
+                        </Alert>
+                    )}
+                </div>
 
                 <div className="row mx-5" style={{ marginTop: "20vh" }}>
                     <h2 className="text-uppercase mb-5 fs-3 text-center">
@@ -83,12 +99,7 @@ export default function Contact() {
                         <h2 className="text-uppercase mt-5" style={{ color: "white" }}>
                             Formulaire de contact
                         </h2>
-                        {success && (
-                            <Alert variant="success" onClose={() => setSuccess(false)} dismissible>
-                                Votre message a été envoyé avec succès !
-                            </Alert>
-                        )}
-                        <Form onSubmit={handleSubmit}>
+                        <Form onSubmit={handleSubmit} encType="multipart/form-data">
                             <p className="mt-5" style={{ color: "white" }}>
                                 Vos Informations de contact
                             </p>
@@ -179,7 +190,11 @@ export default function Contact() {
                                 <Form.Label style={{ color: "white" }}>
                                     Faites nous parvenir votre CV
                                 </Form.Label>
-                                <Form.Control type="file" />
+                                <Form.Control
+                                    type="file"
+                                    id="cvFile"
+                                    onChange={handleChange}
+                                />
                             </FormGroup>
                             <FormGroup className="mb-3">
                                 <Form.Check

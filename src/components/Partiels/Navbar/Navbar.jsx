@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -19,22 +19,21 @@ function NavbarTop() {
     setExpanded(false); // Fermer le menu lorsqu'un lien est cliqué
   };
 
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-    const visible = prevScrollPos > currentScrollPos;
-
-    setVisible(visible);
-    setPrevScrollPos(currentScrollPos);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const visible = prevScrollPos > currentScrollPos;
+
+      setVisible(visible);
+      setPrevScrollPos(currentScrollPos);
+    };
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [prevScrollPos, visible, handleScroll]);
-
+  }, [prevScrollPos]);
   return (
     <Navbar expand="lg" className={`navbar ${visible ? 'visible' : 'hidden'}`} id='navbar' expanded={expanded}>
       <Container>
@@ -56,9 +55,14 @@ function NavbarTop() {
             </div>
             <NavLink to="/a_propos" className={'nav_link ms-lg-4 '} onClick={() => handleLinkClick()}>&#192; propos</NavLink>
             <NavLink to="/Presse" className={'nav_link ms-lg-4 '} onClick={() => handleLinkClick()}>Presse</NavLink>
-            <NavLink to="/Entreprises" className={'nav_link ms-lg-4 entreprises_page'} onClick={() => handleLinkClick()}>Entreprises</NavLink>
+            <div className="dropDown ms-lg-4">
+            <NavLink to="/Entreprises" className={'nav_link  dropDownForm'} onClick={() => handleLinkClick()}>Entreprises</NavLink>
+              <div className="dropDownContent" id='dropDownContent'>
+                <a href="https://www.start-zup.org/Dashboard_startZupv1/les-stagiaires" target="__blank" onClick={() => handleLinkClick()}><span style={{"fontSize": "0.9em"}}>Connexion à la plateforme entreprises</span></a>
+              </div>
+            </div>
+            {/* <NavLink to="/Entreprises" className={'nav_link ms-lg-4 entreprises_page'} onClick={() => handleLinkClick()}>Entreprises</NavLink> */}
             <NavLink to="/Contact" className={'nav_link ms-lg-4 '} onClick={() => handleLinkClick()}>Contactez-nous</NavLink>
-            <NavLink to="https://www.start-zup.org/Dashboard_startZupv1/login" className={'entreprises nav_link ms-lg-4 '} onClick={() => handleLinkClick()}>Connexion Entreprise</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

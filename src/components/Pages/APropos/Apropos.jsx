@@ -12,7 +12,7 @@ export function Apropos(){
         <Helmet>
             <title>&#192; propos</title>
         </Helmet>
-        <div className="container-fluid" style={{'marginTop': '20vh',}}>
+        <div className="container-fluid mb-5" style={{'marginTop': '20vh',}}>
             <img src={image} alt="start-Zup" style={{'width': '80vw'}}/>
             <div className="row mb-5">
                 <div className="col">

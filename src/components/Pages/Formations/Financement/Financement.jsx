@@ -9,7 +9,7 @@ export default function Financement() {
     return (
         <>
             <div className="container-fluid" id="financement">
-                <div className="row">
+                <div className="row mt-5">
                     <div className="col">
                         <h2 className="text-uppercase">Le financement</h2>
                     </div>

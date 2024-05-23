@@ -13,14 +13,14 @@ export function Formations (props){
         <Helmet>
             <title>Formations</title>
         </Helmet>
-        <div className="container-fluid" style={{'marginTop': '20vh'}} id="Formations">
+        <div className="container-fluid mb-5" style={{'marginTop': '20vh'}} id="Formations">
             
-        </div>
         <Parcours/>
         <PourquoiSZ />
         <ApresForm />
         <Integration />
         <Financement />
+        </div>
         </>
     ) 
         

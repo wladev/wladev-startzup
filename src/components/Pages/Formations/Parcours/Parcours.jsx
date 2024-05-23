@@ -250,7 +250,7 @@ export default function Parcours() {
                     >
                         Langages necessaires au développement
                     </h6>
-                    <p className="text-center">
+                    <p className="text-center fs-5">
                         HTML{" "}
                         <img
                             src={imgHtml}
@@ -264,7 +264,7 @@ export default function Parcours() {
                             alt="logo css"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         JavaScript{" "}
                         <img
                             src={imgJs}
@@ -272,7 +272,7 @@ export default function Parcours() {
                             alt="logo JavaScript"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         PHP{" "}
                         <img
                             src={imgPhp}
@@ -280,7 +280,7 @@ export default function Parcours() {
                             alt="logo PHP"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         SQL{" "}
                         <img
                             src={imgSql}
@@ -295,7 +295,7 @@ export default function Parcours() {
                     >
                         Logiciel de gestion des versions et de projets
                     </h6>
-                    <p>
+                    <p className="fs-5">
                         GIT{" "}
                         <img
                             src={imgGit}
@@ -303,7 +303,7 @@ export default function Parcours() {
                             alt="logo Git"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         Jira{" "}
                         <img
                             src={imgJira}
@@ -345,7 +345,7 @@ export default function Parcours() {
                     >
                         Outils de gestion en entreprise
                     </h6>
-                    <p className="text-center">
+                    <p className="text-center fs-5">
                         Sales Force{" "}
                         <img
                             src={imgSales}
@@ -353,7 +353,7 @@ export default function Parcours() {
                             alt="logo html"
                         />{" "}
                     </p>
-                    <p>
+                    <p className="fs-5">
                         Odoo{" "}
                         <img
                             src={imgOdoo}
@@ -361,7 +361,7 @@ export default function Parcours() {
                             alt="logo JavaScript"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         Office 365{" "}
                         <img
                             src={imgOffice}
@@ -369,7 +369,7 @@ export default function Parcours() {
                             alt="logo JavaScript"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         Service Now (Helpdesk){" "}
                         <img
                             src={imgServiceNow}
@@ -377,7 +377,7 @@ export default function Parcours() {
                             alt="logo PHP"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         Power BI{" "}
                         <img
                             src={imgPowerBi}
@@ -385,7 +385,7 @@ export default function Parcours() {
                             alt="logo SQL"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         Talend{" "}
                         <img
                             src={imgTalend}
@@ -393,7 +393,7 @@ export default function Parcours() {
                             alt="logo SQL"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         SQL{" "}
                         <img
                             src={imgSql}
@@ -401,7 +401,7 @@ export default function Parcours() {
                             alt="logo SQL"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         AS 400{" "}
                         <img
                             src={imgAs}
@@ -416,7 +416,7 @@ export default function Parcours() {
                     >
                         Outils de développement Web
                     </h6>
-                    <p>
+                    <p className="fs-5">
                         Angular{" "}
                         <img
                             src={imgAngular}
@@ -424,7 +424,7 @@ export default function Parcours() {
                             alt="logo Git"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         React{" "}
                         <img
                             src={imgReact}
@@ -432,7 +432,7 @@ export default function Parcours() {
                             alt="logo Jira"
                         />
                     </p>
-                    <p>
+                    <p className="fs-5">
                         No Code{" "}
                         <img
                             src={imgNoCode}
@@ -447,8 +447,8 @@ export default function Parcours() {
                     >
                         Autres modules
                     </h6>
-                    <p>Entrepreneur</p>
-                    <p>IA / Automatisation</p>
+                    <p className="fs-5">Entrepreneur</p>
+                    <p className="fs-5">IA / Automatisation</p>
                 </Modal.Body>
             </Modal>
         );
@@ -492,18 +492,18 @@ export default function Parcours() {
                         Rejoignez une de nos entreprises partenaires pour votre
                         stage pratique. Vous pourrez ainsi:
                     </p>
-                    <ul className="fs-4 mt-5 text-start ">
-                        <li className="my-3" style={{ color: "#7bd134" }}>
-                            Consolider vos acquis
+                    <ul className="fs-4 mt-5 text-center ">
+                        <li className="my-3" style={{ color: "#7bd134", "listStyle": "none" }}>
+                            &#10004; Consolider vos acquis
                         </li>
-                        <li className="my-3" style={{ color: "#7bd134" }}>
-                            Pratiquer en situation réelle
+                        <li className="my-3" style={{ color: "#7bd134", "listStyle": "none" }}>
+                            &#10004; Pratiquer en situation réelle
                         </li>
-                        <li className="my-3" style={{ color: "#7bd134" }}>
-                            &#201;largir ou créer votre réseau professionnel
+                        <li className="my-3" style={{ color: "#7bd134", "listStyle": "none" }}>
+                           &#10004;  &#201;largir ou créer votre réseau professionnel
                         </li>
-                        <li className="my-3" style={{ color: "#7bd134" }}>
-                            Apporter un élément solide à votre CV
+                        <li className="my-3" style={{ color: "#7bd134", "listStyle": "none" }}>
+                            &#10004; Apporter un élément solide à votre CV
                         </li>
                     </ul>
                 </Modal.Body>
