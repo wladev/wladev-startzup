@@ -13,7 +13,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Footer() {
   return (
-    <MDBFooter className='text-center pt-5' color='black' bgColor='light'>
+    <MDBFooter className='text-center pt-3' color='black' bgColor='light'>
       <MDBContainer className='p-4'>
         <section className='mb-4'>
           <MDBBtn outline color="dark" floating className='m-1' href='https://twitter.com/Startzup78' role='button' target='_blank'>
@@ -33,8 +33,8 @@ export default function Footer() {
           </MDBBtn>
         </section>
 
-        <section className=''>
-          <form action='../../../controllers/pageCtrl.php'>
+        {/* <section className=''>
+          <form action=''>
             <MDBRow className='d-flex justify-content-center'>
               <MDBCol size="auto">
                 <p className='pt-2'>
@@ -59,7 +59,7 @@ export default function Footer() {
           <p>
             Restez informés de nos actualités et de nos événements
           </p>
-        </section>
+        </section> */}
 
         <section className=''>
           <MDBRow>

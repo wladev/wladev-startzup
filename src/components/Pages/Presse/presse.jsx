@@ -8,11 +8,11 @@ function Presse() {
     const [articles, setArticles] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 4;
-    const ImgUrl = "http://localhost:8000/img/";
+    const ImgUrl = "https://admin-sz.wladev.fr/img/";
 
     const fetchData = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/posts");
+            const response = await fetch("https://admin-sz.wladev.fr/api/posts");
             const data = await response.json();
             console.log(data);
             const articlesArray = data['hydra:member'] || [];
