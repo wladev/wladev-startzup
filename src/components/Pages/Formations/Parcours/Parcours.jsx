@@ -447,6 +447,7 @@ export default function Parcours() {
                     >
                         Autres modules
                     </h6>
+                    <p className="fs-5">Développeur Full Stack</p>
                     <p className="fs-5">Entrepreneur</p>
                     <p className="fs-5">IA / Automatisation</p>
                 </Modal.Body>

@@ -39,7 +39,7 @@ h1, h2{
 
 .over_background_title {
     margin-top: 15vh !important;
-    color: rgb(0, 0, 0);
+    color: #ffffff;
     font-size: 10vw;
     opacity: 1;
 }
@@ -140,7 +140,7 @@ h1, h2{
   }
 
   .navbar.hidden {
-    top: -80px; /* Assurez-vous que cette valeur correspond à la hauteur de votre navbar */
+    top: -90px; /*hauteur de la navbar */
   }
 
   .navbar.visible {
@@ -148,7 +148,8 @@ h1, h2{
   }
 
 .logo{
-    width: 60px;
+    width: 70px;
+    margin-top: 20px;
 }
 
 /* Page formations */
@@ -209,6 +210,9 @@ h1, h2{
     padding: 0;
 }
 
+/*page Agenda*/
+
+
 
 /*page entreprises*/
 .bgEntreprises{
@@ -221,6 +225,15 @@ h1, h2{
 }
 
 /*Page presse*/
+.bgAgenda{
+    background-image: url("../img/agenda.png");
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
 
 .bgPresse{
     background-image: url("../img/bgPresse.jpeg");
@@ -250,6 +263,10 @@ h1, h2{
 #press_btn:hover {
     background-color: #78fad3;
 }
+
+/* .pagination_btn btn {
+    color: red !important;
+} */
 
 /*contact form*/
 

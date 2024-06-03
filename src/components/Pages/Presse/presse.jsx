@@ -3,16 +3,19 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Helmet } from "react-helmet";
 import Pagination from 'react-bootstrap/Pagination';
+import '../../../assets/css/style.css'
 
 function Presse() {
     const [articles, setArticles] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 4;
-    const ImgUrl = "https://admin-sz.wladev.fr/img/";
+    // const ImgUrl = "https://admin-sz.wladev.fr/img/";
+    const ImgUrl = "http://localhost:8000/img/";
 
     const fetchData = async () => {
         try {
-            const response = await fetch("https://admin-sz.wladev.fr/api/posts");
+            // const response = await fetch("https://admin-sz.wladev.fr/api/posts");
+            const response = await fetch("http://localhost:8000/api/posts");
             const data = await response.json();
             console.log(data);
             const articlesArray = data['hydra:member'] || [];
@@ -70,9 +73,8 @@ function Presse() {
                             </Card.Body>
                         </Card>
                     ))}
-                </div>
                 <Pagination className="d-flex justify-content-center">
-                    <Pagination.First onClick={() => handlePageChange(1)} disabled={currentPage === 1} />
+                    <Pagination.First onClick={() => handlePageChange(1)} disabled={currentPage === 1} className="pagination_btn"/>
                     <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} />
                     {[...Array(totalPages)].map((_, index) => (
                         <Pagination.Item
@@ -87,6 +89,7 @@ function Presse() {
                     <Pagination.Next onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages} />
                     <Pagination.Last onClick={() => handlePageChange(totalPages)} disabled={currentPage === totalPages} />
                 </Pagination>
+                </div>
             </div>
         </>
     );

@@ -16,7 +16,7 @@ function Background() {
                         </div>
                         <div className="row">
                             <h1 className="text-uppercase over_background text-center">
-                                école du numérique
+                                école du numérique associative
                             </h1>
                         </div>
                     </div>

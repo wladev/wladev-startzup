@@ -35,7 +35,7 @@ export default function Entreprises() {
                         <p className="fs-4">
                             <span
                                 className="text-uppercase fs-2"
-                                style={{ color: "#36E2AD" }}
+                                style={{ color: "#ff98c3" }}
                             >
                                 Start-Zup agency
                             </span>{" "}
@@ -106,7 +106,7 @@ export default function Entreprises() {
                     <div className="col-lg-4 mb-5">
                         <p
                             className="text-uppercase fs-3"
-                            style={{ color: "#36E2AD" }}
+                            style={{ color: "#ff98c3" }}
                         >
                             Conseil en stratègie
                         </p>
@@ -125,7 +125,7 @@ export default function Entreprises() {
                     <div className="col-lg-4 mb-5">
                         <p
                             className="text-uppercase fs-3"
-                            style={{ color: "#36E2AD" }}
+                            style={{ color: "#ff98c3" }}
                         >
                             Méthodologie et process
                         </p>
@@ -144,7 +144,7 @@ export default function Entreprises() {
                     <div className="col-lg-4 mb-5">
                         <p
                             className="text-uppercase fs-3"
-                            style={{ color: "#36E2AD" }}
+                            style={{ color: "#ff98c3" }}
                         >
                             Expertise et technologie
                         </p>

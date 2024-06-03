@@ -18,7 +18,7 @@ export function Home() {
                             toutes et à tous, notre seul critère de recrutement
                             est&nbsp;:
                             <br />
-                            <strong>VOTRE MOTIVATION&nbsp;!</strong>
+                            <strong className="fs-1">VOTRE MOTIVATION&nbsp;!</strong>
                         </p>
                         <p className="mt-5 fs-5">
                             Implantée à Mantes-la-Jolie et Trappes, Start-Zup

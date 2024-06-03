@@ -8,7 +8,7 @@ export function Presentation() {
                 <div className="row">
                     <div className="col-12">
                         <h2 className="text-uppercase my-5 fs-1">
-                            <span style={{ color: "#36E2AD" }}>Start-Zup</span>{" "}
+                            <span style={{ color: "#ff98c3" }}>Start-Zup</span>{" "}
                             c'est quoi&nbsp;?
                         </h2>
                         <p className="text-uppercase fs-5">
