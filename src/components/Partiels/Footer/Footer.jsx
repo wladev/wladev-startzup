@@ -1,10 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import "../Footer/Footer.module.css"
 import {
   MDBFooter,
   MDBContainer,
   MDBIcon,
-  MDBInput,
+  // MDBInput,
   MDBCol,
   MDBRow,
   MDBBtn
@@ -68,15 +69,15 @@ export default function Footer() {
 
               <ul className='list-unstyled mb-0'>
                 <li>
-                  <a href='#!' className='text-dark'>
-                    RGPD
+                  <a href='/Rgpd' className='text-dark'>
+                    RGPD / Mentions légales
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href='#!' className='text-dark'>
                     Conditions générales
                   </a>
-                </li>
+                </li> */}
               </ul>
             </MDBCol>
 

@@ -13,6 +13,7 @@ import Contact from './components/Pages/Contact/Contact';
 import Entreprises from './components/Pages/Entreprises/Entreprises';
 import Agenda from './components/Pages/Agenda/Agenda';
 import Presse from './components/Pages/Presse/Presse';
+import Rgpd from './components/Partiels/Footer/RGPD/Rgpd';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path = '/Agenda' element={<Agenda />} />
         <Route path = '/Presse' element={<Presse />} />
         <Route path = '/Entreprises' element={<Entreprises />} />
+        <Route path = '/Rgpd' element={<Rgpd />} />
       </Routes>
       </BrowserRouter>
     </div>

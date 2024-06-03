@@ -77,8 +77,8 @@ function NavbarTop() {
                 </div>
               )}
             </div>
-            <NavLink to="/Agenda" className={'nav_link ms-lg-4 '} onClick={handleLinkClick}>Agenda</NavLink>
             <NavLink to="/a_propos" className={'nav_link ms-lg-4 '} onClick={handleLinkClick}>&#192; propos</NavLink>
+            <NavLink to="/Agenda" className={'nav_link ms-lg-4 '} onClick={handleLinkClick}>Agenda</NavLink>
             <NavLink to="/Presse" className={'nav_link ms-lg-4 '} onClick={handleLinkClick}>Presse</NavLink>
             <div className="dropDown ms-lg-4">
               <NavLink 

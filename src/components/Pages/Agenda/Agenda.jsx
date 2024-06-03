@@ -11,9 +11,11 @@ function Events() {
     const [upcomingPage, setUpcomingPage] = useState(1);
     const itemsPerPage = 4;
     const ImgUrl = "https://www.admin-web.start-zup.org/img/";
+    // const ImgUrl = "http://localhost:8000/img/";
 
     const fetchData = async () => {
         try {
+            // const response = await fetch("http://localhost:8000/api/events");
             const response = await fetch("https://www.admin-web.start-zup.org/api/events");
             const data = await response.json();
             console.log(data);
@@ -115,7 +117,8 @@ function Events() {
                                     <Accordion className="px-0">
                                         <Accordion.Item eventKey={event.id}>
                                             <Accordion.Header>
-                                                <p><span className="fw-bold">{event.theme} </span>  le {formatDate(event.dateEvent)}</p>
+                                                <p><span className="fw-bold">{event.theme} </span>
+                                                <br />{event.dateEnd && (<span>du {formatDate2(event.dateEvent)} au {formatDate2(event.dateEnd)} </span>)} {!event.dateEnd && (<span>le {formatDate(event.dateEvent)}</span>)} </p>
                                             </Accordion.Header>
                                             <Accordion.Body>
                                                 {event.description}
@@ -174,6 +177,7 @@ function Events() {
                                 {event.dateEvent && (
                                     <Card.Text className="mt-3" id="event_card"> <br />le {formatDate2(event.dateEvent)}</Card.Text>
                                 )}
+                                {event.link && (<p><a href={event.link} target="__blank"></a>Retour sur l'événement</p>)}
                                 {/* <Button className="mt-3" id="event_btn" href={event.link} target="__blank">
                                     Voir l'événement
                                 </Button> */}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FormGroup, Alert } from "react-bootstrap";
+import { FormGroup, Alert, Spinner } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Helmet } from "react-helmet";
@@ -13,10 +13,12 @@ export default function Contact() {
         situation: 0,
         needs: "",
         knowSz: 0,
-        cvFile: null,  // Ajout de cvFile pour stocker le fichier
+        cvFile: null,
     });
 
     const [success, setSuccess] = useState(false);
+    const [isChecked, setIsChecked] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { id, value, files } = e.target;
@@ -33,15 +35,21 @@ export default function Contact() {
         }));
     };
 
+    const handleCheckboxChange = (e) => {
+        setIsChecked(e.target.checked);
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
+
         const form = new FormData();
         Object.keys(formData).forEach(key => {
             form.append(key, formData[key]);
         });
 
         try {
-            // const response = await fetch("https://admin-sz.wladev.fr/api/web_contacts", {
+            // const response = await fetch("http://localhost:8000/api/web_contacts", {
             const response = await fetch("https://www.admin-web.start-zup.org/api/web_contacts", {
                 method: "POST",
                 body: form,
@@ -53,14 +61,15 @@ export default function Contact() {
                 throw new Error(`Error: ${response.statusText}`);
             }
 
-            // Afficher l'alerte de succès et rafraîchir la page après 5 secondes
             setSuccess(true);
             setTimeout(() => {
+                setSuccess(false);
                 window.location.reload();
             }, 5000);
-
         } catch (error) {
             console.error("There was an error!", error);
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -70,13 +79,6 @@ export default function Contact() {
                 <title>Contact</title>
             </Helmet>
             <div className="container-fluid mb-5">
-                <div className="row">
-                    {success && (
-                        <Alert variant="success" onClose={() => setSuccess(false)} dismissible>
-                            Votre message a été envoyé avec succès !
-                        </Alert>
-                    )}
-                </div>
 
                 <div className="row mx-5" style={{ marginTop: "20vh" }}>
                     <h2 className="text-uppercase mb-5 fs-3 text-center">
@@ -202,13 +204,21 @@ export default function Contact() {
                                     type="checkbox"
                                     label="J'ai pris connaissance des informations liées à la conservation de mes données personnelles"
                                     style={{ color: "white" }}
+                                    onChange={handleCheckboxChange}
                                 />
                             </FormGroup>
-                            <Button variant="light" type="submit" className="mb-5">
-                                Envoyer
+                            <Button variant="light" type="submit" className="mb-5" disabled={!isChecked || isSubmitting}>
+                                {isSubmitting ? <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" /> : "Envoyer"}
                             </Button>
                         </Form>
                     </div>
+                <div className="row">
+                    {success && (
+                        <Alert variant="success" onClose={() => setSuccess(false)} dismissible>
+                            Votre message a été envoyé avec succès !
+                        </Alert>
+                    )}
+                </div>
                 </div>
             </div>
         </>
