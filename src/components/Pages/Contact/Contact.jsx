@@ -10,6 +10,7 @@ export default function Contact() {
         lstName: "",
         fstName: "",
         email: "",
+        tel: "",
         situation: 0,
         needs: "",
         knowSz: 0,
@@ -141,6 +142,15 @@ export default function Contact() {
                                     placeholder="Entrez votre email"
                                     id="email"
                                     value={formData.email}
+                                    onChange={handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup className="mb-3">
+                                <Form.Control
+                                    type="tel"
+                                    placeholder="Numéro de téléphone"
+                                    id="tel"
+                                    value={formData.tel}
                                     onChange={handleChange}
                                 />
                             </FormGroup>
