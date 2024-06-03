@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Helmet } from "react-helmet";
 import '../../../assets/css/style.css';
@@ -10,11 +10,11 @@ function Events() {
     const [currentPage, setCurrentPage] = useState(1);
     const [upcomingPage, setUpcomingPage] = useState(1);
     const itemsPerPage = 4;
-    const ImgUrl = "http://localhost:8000/img/";
+    const ImgUrl = "https://www.admin-web.start-zup.org/img/";
 
     const fetchData = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/events");
+            const response = await fetch("https://www.admin-web.start-zup.org/api/events");
             const data = await response.json();
             console.log(data);
             const eventsArray = data['hydra:member'] || [];
@@ -164,7 +164,7 @@ function Events() {
                             )}
                             <Card.Body style={{ height: "20rem", marginTop: "2rem", marginBottom: "2rem" }}>
                                 <Card.Text className="mt-3" id="event_card">{event.description}</Card.Text>
-                                {event.guest == 1 && (<>
+                                {event.guest === 1 && (<>
                                     <Card.Text className="mt-3 text-uppercase" id="event_card">Rencontre du vendredi</Card.Text>
                                     <Card.Text className="mt-3" id="event_card">Avec {event.guestName}</Card.Text>
                                     <Card.Text className="mt-3" id="event_card">{event.guestTitle} chez {event.guestCompany}<hr/></Card.Text>

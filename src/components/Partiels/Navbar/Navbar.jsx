@@ -1,3 +1,5 @@
+//navbar.jsx
+
 import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -7,7 +9,7 @@ import logo from '../../../assets/img/logo.png'
 
 function NavbarTop() {
   const [expanded, setExpanded] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
   const [formationsDropdown, setFormationsDropdown] = useState(false);
   const [entreprisesDropdown, setEntreprisesDropdown] = useState(false);
@@ -34,7 +36,7 @@ function NavbarTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
+      const currentScrollPos = window.pageYOffset;
       const visible = prevScrollPos > currentScrollPos;
 
       setVisible(visible);
