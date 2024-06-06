@@ -11,11 +11,9 @@ function Events() {
     const [upcomingPage, setUpcomingPage] = useState(1);
     const itemsPerPage = 4;
     const ImgUrl = "https://www.admin-web.start-zup.org/img/";
-    // const ImgUrl = "http://localhost:8000/img/";
 
     const fetchData = async () => {
         try {
-            // const response = await fetch("http://localhost:8000/api/events");
             const response = await fetch("https://www.admin-web.start-zup.org/api/events");
             const data = await response.json();
             console.log(data);
@@ -36,11 +34,14 @@ function Events() {
     const sortByDateDesc = (eventsArray) => {
         return eventsArray.sort((a, b) => new Date(b.dateEvent) - new Date(a.dateEvent));
     };
+    const sortByDateAsc = (eventsArray) => {
+        return eventsArray.sort((a, b) => new Date(a.dateEvent) - new Date(b.dateEvent));
+    };
 
     // Filtrer et trier les événements passés, futurs et ceux avec guest=1
     const pastEvents = sortByDateDesc(events.filter(event => new Date(event.dateEvent) < currentDate));
     const guestEvents = sortByDateDesc(events.filter(event => event.guest === 1));
-    const upcomingEvents = sortByDateDesc(events.filter(event => new Date(event.dateEvent) >= currentDate && event.guest !== 1));
+    const upcomingEvents = sortByDateAsc(events.filter(event => new Date(event.dateEvent) >= currentDate && event.guest !== 1));
 
     // Pagination pour les événements passés
     const indexOfLastPastEvent = currentPage * itemsPerPage;
@@ -82,19 +83,7 @@ function Events() {
             </Helmet>
             <div className="container-fluid">
                 <div className="row" style={{ marginTop: "20vh" }}>
-                    <div className="col bgAgenda text-uppercase text-center d-flex justify-content-center">
-                        {/* <h1
-                            className="text-uppercase my-auto mx-auto"
-                            id="agendaTitle"
-                            style={{
-                                'color': "white",
-                                'fontWeight': "bold",
-                                'fontSize': "5em",
-                            }}
-                        >
-                            Agenda
-                        </h1> */}
-                    </div>
+                    <div className="col bgAgenda text-uppercase text-center d-flex justify-content-center"></div>
                 </div>
                 <div className="row">
                     <div className="col px-5 py-5 fs-4 text-center">
@@ -121,7 +110,7 @@ function Events() {
                                                 <br />{event.dateEnd && (<span>du {formatDate2(event.dateEvent)} au {formatDate2(event.dateEnd)} </span>)} {!event.dateEnd && (<span>le {formatDate(event.dateEvent)}</span>)} </p>
                                             </Accordion.Header>
                                             <Accordion.Body>
-                                                {event.description}
+                                               {event.lieu && (<p>Lieu: {event.lieu}</p>)} {event.description} <br />Pour tout renseignement <a href="/contact">contactez-nous</a>
                                             </Accordion.Body>
                                         </Accordion.Item>
                                     </Accordion>
@@ -161,29 +150,28 @@ function Events() {
                 <div className="row d-flex gap-4 justify-content-center py-5" style={{ "backgroundColor": "#eafbf69d" }}>
                     <h2 className="text-uppercase fs-4">Les événements passés</h2>
                     {currentPastEvents.map(event => (
-                        <Card key={event.id} style={{ width: "18rem", padding: "10" }} className="col-4">
+                        <Card key={event.id} style={{ width: "18rem", height:'30rem', padding: "10" }} className="col-4">
                             {event.photo && (
                                 <Card.Img className="img-fluid" variant="top" src={ImgUrl + event.photo} alt="image de l'événement" id="event_img" />
                             )}
-                            <Card.Body style={{ height: "20rem", marginTop: "2rem", marginBottom: "2rem" }}>
-                                <Card.Text className="mt-3" id="event_card">{event.description}</Card.Text>
+                            <Card.Body style={{ height: "25vh", marginTop: "2rem", marginBottom: "2rem" }}>
+                                <Card.Text className="mt-0" id="event_card">{event.description}</Card.Text>
                                 {event.guest === 1 && (<>
-                                    <Card.Text className="mt-3 text-uppercase" id="event_card">Rencontre du vendredi</Card.Text>
+                                    <Card.Text className="mt-0 text-uppercase" id="event_card">Rencontre du vendredi</Card.Text>
                                     <Card.Text className="mt-3" id="event_card">Avec {event.guestName}</Card.Text>
-                                    <Card.Text className="mt-3" id="event_card">{event.guestTitle} chez {event.guestCompany}<hr/></Card.Text>
-                                    <Card.Text className="mt-3" id="event_card">{event.theme}</Card.Text>
+                                    <Card.Text className="mt-3" id="event_card" style={{height:'10vh'}}>{event.guestTitle} chez {event.guestCompany}<hr/></Card.Text>
+                                    <Card.Text className="mt-3" id="event_card" style={{height: '10vh'}}>{event.theme}</Card.Text>
                                     </>
                                 )}
                                 {event.dateEvent && (
                                     <Card.Text className="mt-3" id="event_card"> <br />le {formatDate2(event.dateEvent)}</Card.Text>
                                 )}
-                                {event.link && (<p><a href={event.link} target="__blank"></a>Retour sur l'événement</p>)}
-                                {/* <Button className="mt-3" id="event_btn" href={event.link} target="__blank">
-                                    Voir l'événement
-                                </Button> */}
+                                {event.link && (<p style={{height:'5vh'}}><a href={event.link} target="__blank"></a>Retour sur l'événement</p>)}
+                                {!event.link && (<p style={{height:'5vh'}}></p>)}
                             </Card.Body>
                         </Card>
                     ))}
+                        </div>
                     <Pagination className="d-flex justify-content-center">
                         <Pagination.First onClick={() => handlePageChange(1)} disabled={currentPage === 1} className="pagination_btn" />
                         <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} />
@@ -200,10 +188,10 @@ function Events() {
                         <Pagination.Next onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPagesPastEvents} />
                         <Pagination.Last onClick={() => handlePageChange(totalPagesPastEvents)} disabled={currentPage === totalPagesPastEvents} />
                     </Pagination>
-                </div>
             </div>
         </>
     );
 }
+
 
 export default Events;

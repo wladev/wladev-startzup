@@ -17,6 +17,8 @@ import imgMicrosoft from '../../../../assets/img/microsoft.png';
 import imgAmbition from '../../../../assets/img/ambition.png';
 import imgArd from '../../../../assets/img/ard.png';
 import imgIDF from '../../../../assets/img/regionIDF.png';
+import imgValyu from '../../../../assets/img/valyu.png';
+import imgValyu2 from '../../../../assets/img/valyu2.png';
 
 function Partenaires() {
   const [index, setIndex] = useState(0);
@@ -36,57 +38,63 @@ function Partenaires() {
         </div>
     <Carousel activeIndex={index} onSelect={handleSelect} interval= '2000' indicators={null} controls={null}>
       <Carousel.Item >
-        <img src={slide1} height="100vh" alt="CHG méridian" />
+        <img src={slide1} height="120px" alt="CHG méridian" />
         <Carousel.Caption>
           {/* <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img src={slide2} height="100vh" alt="mission locale du mantois" />
+        <img src={slide2} height="120px" alt="mission locale du mantois" />
         
       </Carousel.Item>
       <Carousel.Item>
-        <img src={slide3} height="100vh" alt="département des Yvelines" />
+        <img src={slide3} height="120px" alt="département des Yvelines" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={slide4} height="100vh" alt="Mairie de mantes le jolie" />
+        <img src={slide4} height="120px" alt="Mairie de mantes le jolie" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={slide5} height="100vh" alt="mairie de trappes" />
+        <img src={slide5} height="120px" alt="mairie de trappes" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgIntm} height="100vh" alt="logo INTM" />
+        <img src={imgIntm} height="120px" alt="logo INTM" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgIBM} height="100vh" alt="logo IBM" />
+        <img src={imgIBM} height="120px" alt="logo IBM" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgNextDecision} height="100vh" alt="Logo Next decision" />
+        <img src={imgNextDecision} height="120px" alt="Logo Next decision" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgSales} height="100vh" alt="logo Sales Force" />
+        <img src={imgSales} height="120px" alt="logo Sales Force" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgOdoo} height="100vh" alt="logo Odoo" />
+        <img src={imgOdoo} height="120px" alt="logo Odoo" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgGoogle} height="100vh" alt="logo google" />
+        <img src={imgGoogle} height="120px" alt="logo google" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgAws} height="100vh" alt="logo AWS" />
+        <img src={imgAws} height="120px" alt="logo AWS" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgMicrosoft} height="100vh" alt="logo microsoft" />
+        <img src={imgMicrosoft} height="120px" alt="logo microsoft" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgAmbition} height="100vh" alt="logo Ambition Technologies" />
+        <img src={imgAmbition} height="120px" alt="logo Ambition Technologies" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgArd} height="100vh" alt="logo ARD com" />
+        <img src={imgArd} height="120px" alt="logo ARD com" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src={imgIDF} height="100vh" alt="logo ARD com" />
+        <img src={imgIDF} height="120px" alt="logo IDF com" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src={imgValyu} height="120px" alt="logo Valyu com" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src={imgValyu2} height="120px" alt="logo Valyu Prod com" />
       </Carousel.Item>
     </Carousel>
     </>

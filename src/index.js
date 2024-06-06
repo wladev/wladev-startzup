@@ -15,6 +15,7 @@ root.render(
   <React.StrictMode>
     <Helmet>
       <meta name='description' content='Ecole du numérique à Mantes-la-jolie' />
+      <meta title='start-zup.com' />
     </Helmet>
     <App />
   </React.StrictMode>

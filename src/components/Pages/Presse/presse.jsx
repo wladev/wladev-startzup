@@ -9,12 +9,11 @@ function Presse() {
     const [articles, setArticles] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 4;
-    // const ImgUrl = "https://admin-sz.wladev.fr/img/";
+
     const ImgUrl = "https://www.admin-web.start-zup.org/img/";
 
     const fetchData = async () => {
         try {
-            // const response = await fetch("https://admin-sz.wladev.fr/api/posts");
             const response = await fetch("https://www.admin-web.start-zup.org/api/posts");
             const data = await response.json();
             console.log(data);

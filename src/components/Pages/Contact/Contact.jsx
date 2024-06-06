@@ -50,7 +50,6 @@ export default function Contact() {
         });
 
         try {
-            // const response = await fetch("http://localhost:8000/api/web_contacts", {
             const response = await fetch("https://www.admin-web.start-zup.org/api/web_contacts", {
                 method: "POST",
                 body: form,
