@@ -10,11 +10,11 @@ function Presse() {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 4;
 
-    const ImgUrl = "https://www.admin-web.start-zup.org/img/";
+    const ImgUrl = "https://www.************/img/";
 
     const fetchData = async () => {
         try {
-            const response = await fetch("https://www.admin-web.start-zup.org/api/posts");
+            const response = await fetch("https://www.*************/api/posts");
             const data = await response.json();
             console.log(data);
             const articlesArray = data['hydra:member'] || [];
