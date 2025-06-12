@@ -10,11 +10,11 @@ function Events() {
     const [currentPage, setCurrentPage] = useState(1);
     const [upcomingPage, setUpcomingPage] = useState(1);
     const itemsPerPage = 4;
-    const ImgUrl = "https://www.admin-web.start-zup.org/img/";
+    const ImgUrl = "https://www.************/img/";
 
     const fetchData = async () => {
         try {
-            const response = await fetch("https://www.admin-web.start-zup.org/api/events");
+            const response = await fetch("https://www.*******/api/events");
             const data = await response.json();
             console.log(data);
             const eventsArray = data['hydra:member'] || [];
