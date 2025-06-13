@@ -37,7 +37,7 @@ Reprise complète de l’application vitrine [Start-Zup](https://start-zup.com),
 ## 🔌 API & Back-office
 
 Les données sont récupérées dynamiquement via une API REST construite en Symfony.  
-Tous les contenus sont administrés via un back-office sécurisé (voir dépôt `back-sf`).
+Tous les contenus sont administrés via un back-office sécurisé (voir dépôt `[back-sf](https://github.com/wladev/backSF)`).
 
 ---
 
